@@ -157,14 +157,18 @@
     profiles, and saved stories all live here.</td></tr>
     <tr><td>Anthropic</td><td>Writes the story text. The request includes your child's first name
     and the profile details used to personalise the story.</td></tr>
-    <tr><td>fal.ai</td><td>Draws the illustrations. The request includes the text of each story page
-    (which includes your child's name) and the age, hair colour, eye colour and illustration style
-    from their profile.</td></tr>
+    <tr><td>fal.ai and OpenAI</td><td>Draw the illustrations: fal.ai runs each request on OpenAI's
+    image model. The request includes the text of each story page (which includes your child's
+    name), the names and kinds of their pets and of the story's other characters, the age, hair
+    colour, eye colour and illustration style from their profile, and links to the story's earlier
+    pictures so everyone looks the same on every page.</td></tr>
     <tr><td>ElevenLabs</td><td>Reads the story aloud. The request includes the text of each story
     page, which includes your child's name. The narration is Sloffy's voice; no one's voice is
-    recorded.</td></tr>
+    recorded. ElevenLabs keeps a history of the narration it makes (see
+    <a href="#retention">How long we keep it</a>).</td></tr>
     <tr><td>Resend</td><td>Sends the emails with your sign-up, password-reset and email-change
-    codes. It receives only the parent's email address.</td></tr>
+    codes, the notice when your password is changed, and the warning before an inactive account is
+    deleted. It receives the parent's email address and the email itself.</td></tr>
     <tr><td>RevenueCat</td><td>Tracks which subscription an account holds.</td></tr>
     <tr><td>Apple App Store / Google Play</td><td>Take the payment and manage billing. We receive
     only the resulting subscription status.</td></tr>
@@ -221,27 +225,35 @@
   program describing these safeguards and review it at least once a year.
 </p>
 
-<h2>How long we keep it</h2>
+<h2 id="retention">How long we keep it</h2>
 <p>
-  We keep information only as long as we need it to provide the app, and never indefinitely.
+  We keep information only as long as we need it to provide the app. The one exception is the
+  narration history kept by our voice provider, ElevenLabs, described at the end of this list.
 </p>
 <ul>
   <li><strong>Account, child profiles and saved stories:</strong> until you delete them, or until the
-  account has been inactive for [[12 MONTHS — DECIDE, AND BUILD THE JOB]], in which case we delete it
-  in full after emailing you [[30 DAYS]] beforehand. Accounts with an active subscription are never
+  account has not been used for 12 months, in which case we delete it in full after emailing you 30
+  days beforehand. Opening the app counts as using it. Accounts with an active subscription are never
   treated as inactive.</li>
   <li><strong>Illustrations</strong> no saved story uses, for example from a story you did not save
   or have deleted: removed within 30 days.</li>
   <li><strong>Narration audio:</strong> removed within 90 days of being made, whether or not the
   story is kept. It is made again if needed.</li>
+  <li><strong>Narration on your device:</strong> the app keeps a copy of narration it has played in
+  its cache, until the app or your device clears it.</li>
   <li><strong>Daily request counts:</strong> removed after 7 days.</li>
   <li><strong>Deleting a child's profile</strong> deletes their details and saved stories
   immediately. <strong>Deleting your account</strong> deletes the account, every child profile,
   every saved story, and all its illustrations and narration immediately.</li>
-  <li><strong>Backups</strong> of our database expire after [[N DAYS — VERIFY WITH SUPABASE]], so
-  deleted information is gone from backups within that time.</li>
-  <li><strong>Our service providers</strong> keep the requests they process for no longer than
-  [[N DAYS — VERIFY ANTHROPIC, FAL.AI, ELEVENLABS]].</li>
+  <li><strong>Backups:</strong> we do not currently keep backups of our database. If we add them,
+  they will expire within 7 days, so deleted information will be gone from them within that time.</li>
+  <li><strong>Our service providers:</strong> Anthropic deletes story requests within 30 days, and
+  OpenAI keeps image requests in its abuse-monitoring logs for up to 30 days. Either may keep a
+  request longer if it is flagged for misuse or the law requires it. fal.ai does not store the
+  requests, and deletes its copy of each illustration within an hour.</li>
+  <li><strong>ElevenLabs</strong> keeps the narration it makes, and the page text it was made from
+  (which includes your child's name), in our account's history until it is deleted. We do not
+  currently delete it automatically, so deleting a profile or your account does not remove it.</li>
 </ul>
 
 <h2>Your choices and rights</h2>
@@ -265,8 +277,9 @@
 
 <h2>International transfers</h2>
 <p>
-  Our providers process data in the United States and the European Union. Where data leaves your
-  region we rely on the providers' standard contractual clauses.
+  Our database is in the United States, and our service providers process data mainly in the
+  United States. If you use the app from outside the US, your information is transferred there;
+  where the law requires it, we rely on our providers' standard contractual clauses.
 </p>
 
 <h2>Changes to this policy</h2>
