@@ -56,7 +56,7 @@
 
 <header>
   <h1>Stories with Sloffy Privacy Policy</h1>
-  <p class="meta">Last updated: October 20, 2026</p>
+  <p class="meta">Last updated: October 28, 2026</p>
 </header>
 
 <p class="lede">
@@ -99,10 +99,12 @@
       authentication provider — we never see them.</td>
     </tr>
     <tr>
-      <td><strong>Child profile details:</strong> first name or nickname, age, hair colour, eye
-      colour, pets, and interests</td>
+      <td><strong>Child profile details:</strong> first name or nickname, age, whether
+      they are a boy, a girl or neither, skin colour, hair colour and length, eye colour, pets, and
+      interests</td>
       <td>To write stories that feature your child and to illustrate them consistently. You choose
-      what to enter; a nickname works as well as a real name.</td>
+      what to enter: the appearance details and the boy, girl or neither answer are optional, the
+      descriptions are free text, and a nickname works as well as a real name.</td>
     </tr>
     <tr>
       <td><strong>Stories, illustrations and narration</strong> generated in the app, and the topic
@@ -155,12 +157,14 @@
   <tbody>
     <tr><td>Supabase</td><td>Account sign-in, database, and file storage — the account, child
     profiles, and saved stories all live here.</td></tr>
-    <tr><td>Anthropic</td><td>Writes the story text. The request includes your child's first name
-    and the profile details used to personalise the story.</td></tr>
+    <tr><td>Anthropic</td><td>Writes the story text. The request includes your child's first name,
+    the pronouns to use for them (he, she or they, from the boy, girl or neither answer), their pets,
+    their interests and the story topic.</td></tr>
     <tr><td>fal.ai and OpenAI</td><td>Draw the illustrations: fal.ai runs each request on OpenAI's
     image model. The request includes the text of each story page (which includes your child's
-    name), the names and kinds of their pets and of the story's other characters, the age, hair
-    colour, eye colour and illustration style from their profile, and links to the story's earlier
+    name), the names and kinds of their pets and of the story's other characters, the age, boy,
+    girl or neither answer, skin colour, hair colour and length, eye colour and illustration style
+    from their profile, and links to the story's earlier
     pictures so everyone looks the same on every page.</td></tr>
     <tr><td>ElevenLabs</td><td>Reads the story aloud. The request includes the text of each story
     page, which includes your child's name. The narration is Sloffy's voice; no one's voice is
